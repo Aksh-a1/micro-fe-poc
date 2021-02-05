@@ -7,7 +7,7 @@
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
-  "author": "",
+  "author": "Aksh-a1",
   "license": "ISC",
   "dependencies": {
     "react": "^17.0.1",

@@ -1,8 +1,7 @@
-import environmentInfo from './getEnvironmentInfo'
 import APP_LIST from '../appsList'
 import temporaryFilePortsJson from '../../../.tmp/filePorts.json'
 
-const isDevelopmentEmvironment = environmentInfo.mode === 'development'
+const isDevelopmentEmvironment = process.env.NODE_ENV === 'development'
 
 export const getAppUrl = (id) => {
   const app = APP_LIST.find(appObj => Number(appObj.id) === Number(id))

@@ -21,14 +21,24 @@ const getDataFromFile = async () => {
 
 const writeDataToFile = (data) => fs.writeFile(`${basePath}/filePorts.json`, data)
 
+const removeOldEntryForPort = ({ fileData, port }) => {
+  const appPortPairFromFile = Object.entries(fileData)
+  const foundPair = appPortPairFromFile.filter(pair=>pair[1] === port)
+  if(foundPair) {
+    foundPair.map(pair=>delete fileData[pair[0]])
+  }
+  return fileData
+}
+
 const generateFile = async () => {
   try {
     const data = await getDataFromFile()
     const port = await findAPort()
+    const filteredFileData = removeOldEntryForPort({ fileData: data, port })
     const newAppObj = {
       [args.name]: port
     }
-    const newJson = JSON.stringify({ ...data, ...newAppObj })
+    const newJson = JSON.stringify({ ...filteredFileData, ...newAppObj })
     await writeDataToFile(newJson)
     console.log(port)
   } catch(err) {

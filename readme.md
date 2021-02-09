@@ -24,8 +24,8 @@ Want to add new apps (you can add any type of app vue, react, angular etc):
 
 1. Create them at the same level as other apps.
 2. Change the start command in package.json to pass a dynamic PORT env value to your app (the name could differ as per the app you chose). Like below:
-```
-PORT=\"`node ../bin/generateFilePortsJson.js --name=${npm_package_name}`\"
+```JSON
+"start": "react-scripts PORT=\"`node ../bin/generateFilePortsJson.js --name=${npm_package_name}`\" start"
 ```
 3. Add a new button element inside `<div id="app-buttons">` in `container-app/index.html`.
 4. Add a new object inside `container-app/applist.js` like below (_Just put the object at the same serial number you have put the button element in the `html`_):

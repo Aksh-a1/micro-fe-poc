@@ -2,9 +2,8 @@ const path = require('path')
 const commonWebpackConfig = require('./webpack.common')
 const { merge } = require('webpack-merge')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const findAPort = require('../utils/findAPort')
 
-module.exports = async () => merge(commonWebpackConfig, {
+module.exports = async (env) => merge(commonWebpackConfig, {
   mode: "development",
   output: {
     filename: "[name].bundle.js",
@@ -15,6 +14,6 @@ module.exports = async () => merge(commonWebpackConfig, {
   })],
   devServer: {
     publicPath: '/app2',
-    port: await findAPort()
+    port: env.PORT
   },
 })

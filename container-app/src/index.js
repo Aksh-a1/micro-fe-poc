@@ -7,13 +7,14 @@ const childrenArray = Array.from(buttonsDiv.children)
 const iframe = document.getElementById('micro-app')
 
 const getAppUrl = (id) => {
-  const app = APP_LIST.find(appObj => appObje.id === id)
+  const app = APP_LIST.find(appObj => Number(appObj.id) === Number(id))
   return app.path
 }
 
 const onClick = (value) => {
   console.log(value)
   const appUrl = getAppUrl(value)
+  console.log(appUrl)
   iframe.setAttribute('src', appUrl)
 }
 

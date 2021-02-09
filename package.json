@@ -9,6 +9,7 @@
   "author": "Aksh-a1",
   "license": "ISC",
   "devDependencies": {
-    "get-port": "^5.1.1"
+    "get-port": "^5.1.1",
+    "minimist": "^1.2.5"
   }
 }

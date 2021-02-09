@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "initialise": "yarn install && cd application1 && yarn install && cd ../application2 && yarn install && cd ../container-app && yarn install && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aksh-a1",

@@ -13,7 +13,6 @@ module.exports = async (env) => merge(commonWebpackConfig, {
     template: './src/index.html'
   })],
   devServer: {
-    publicPath: '/app1',
     port: env.PORT
   },
 })

@@ -15,7 +15,7 @@ How to run:
 This is the main app which drives or contains all the other app in an iframe.
 3. `yarn start` in `application1` and `application2` directories.
 
->`application1` and `application1` are built using react, webpack and babel.
+>`application1` and `application2` are built using react, webpack and babel.
 
 >`container-app` is built using native html&js, webpack and babel.
 ***

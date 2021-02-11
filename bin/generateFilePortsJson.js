@@ -1,9 +1,11 @@
 const args = require('minimist')(process.argv.slice(2))
 const fs = require('fs/promises')
 const findAPort = require('../utils/findAPort')
+const path = require('path')
 
 //A hack to get path "/micro-fe-poc/.tmp" irrespective of OS
-const basePath = `${__dirname.split('micro-fe-poc')[0]}micro-fe-poc/.tmp`
+const folderName = path.dirname(__dirname).split('/').pop()
+const basePath = `${__dirname.split(folderName)[0]}${folderName}/.tmp`
 
 const getDataFromFile = async () => {
   try {
